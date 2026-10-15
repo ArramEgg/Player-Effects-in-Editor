@@ -1,0 +1,14 @@
+{
+	"geode": "5.10.1",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "arram.player-effects-in-editor",
+	"name": "Player Effects in Editor",
+	"version": "v0.9.0",
+	"developer": "Arram",
+	"description": "For those who enjoy distractions"
+}
