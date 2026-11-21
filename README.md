@@ -1,10 +1,10 @@
-# <cy>Source Code for Player Effects in Editor</c>
+# Source Code for Player Effects in Editor
 
-This mod adds the player effects that are normally enitrely missing from editor playtesting.
+This mod adds the player effects that are normally entirely missing from editor playtesting.
 
-## <cr>Currently Implemented</c>
+## Currently Implemented
 
 - All player particles
 - Trail effect
-
-More soon...
+- Spider dash effect
+- Wave trail
