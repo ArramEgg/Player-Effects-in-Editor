@@ -81,7 +81,7 @@ class $modify(PEIEPlayerOject, PlayerObject) {
             }
 		
 			#ifdef GEODE_IS_MACOS
-				this->flashPlayer(0.3, 0.5, ccWHITE, ccWHITE); 
+				this->flashPlayer(0.3, 0.05, ccWHITE, ccWHITE); 
 			#else
 				this->m_flashMainColor = ccColor3B(255, 255, 255);
 				this->m_flashSecondColor = ccColor3B(255, 255, 255);
