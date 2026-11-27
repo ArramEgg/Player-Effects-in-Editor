@@ -105,6 +105,7 @@ class $modify(PEIEPlayerOject, PlayerObject) {
 			CCSprite* spiderDashSprite = CCSprite::createWithSpriteFrameName("spiderDash_002.png");
 			spiderDashSprite->setColor(color);
 			objectLayer->addChild(spiderDashSprite, 40);
+			spiderDashSprite->setBlendFunc({GL_SRC_ALPHA, GL_ONE});
 			if (!m_isSideways) {
 				spritePos.x = from.x;
 				spritePos.y = (to.y - from.y) * 0.5 + from.y;
