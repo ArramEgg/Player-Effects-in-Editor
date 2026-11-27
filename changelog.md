@@ -1,3 +1,6 @@
+# 1.0.2
+- Fixed funny wave trail behavior when using Wave Reimagined mod
+
 # 1.0.1
 - Added additive blending to spider dash because I forgot it
 

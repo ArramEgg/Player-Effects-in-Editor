@@ -49,6 +49,10 @@ class $modify(PEIEPlayerOject, PlayerObject) {
 		(void)self.setHookPriorityPre("PlayerObject::activateStreak", Priority::Replace);
 	}
 	
+	struct Fields {
+		bool isWaveReimagined;
+	};
+	
     void activateStreak() {
         if (!this->levelFlipping()) {
             if (!m_isHidden) {
@@ -68,6 +72,14 @@ class $modify(PEIEPlayerOject, PlayerObject) {
             }
         }
     } // basically 1:1 recreation from ghidra decompile, minus the "GameManger::get()->m_isEditor" check yayayaya
+	
+	bool init(int player, int ship, GJBaseGameLayer * gameLayer, cocos2d::CCLayer * layer, bool playLayer) {
+		if (!PlayerObject::init(player, ship, gameLayer, layer, playLayer)) return false;
+		if (Loader::get()->isModLoaded("itzar.wave-reimagined")) {
+			m_fields->isWaveReimagined = true;
+		}
+		return true;
+	}
 	
     void playSpiderDashEffect(CCPoint from, CCPoint to) {
 		PlayerObject::playSpiderDashEffect(from, to);
@@ -171,7 +183,12 @@ class $modify(PEIEPlayerOject, PlayerObject) {
         PlayerObject::update(dt);
 		if (LevelEditorLayer::get()) {
 			float pulse = FMODAudioEngine::get()->m_pulse1;
-			this->m_waveTrail->m_waveSize = 10 * pulse * m_vehicleSize;
+			if (m_fields->isWaveReimagined) {
+				this->m_waveTrail->m_waveSize = pulse * m_vehicleSize;
+			}
+			else {
+				this->m_waveTrail->m_waveSize = 10 * pulse * m_vehicleSize;
+			}
 		}
 	}
 };
